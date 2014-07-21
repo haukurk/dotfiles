@@ -12,8 +12,8 @@ echo -n "Changing to the $dotfiles_dir directory ..."
 cd $dotfiles_dir
 echo "done"
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
+    echo "Moving any existing dotfiles from ~ to $bakdir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    ln -s $dotfiles_dir/$file ~/.$file
 done
