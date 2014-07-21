@@ -5,8 +5,8 @@
 
 #
 #  OS Related Aliases #
-alias ll="ls -lhFG"
-alias ls="ls -FG"
+alias ll="ls -lhFG --color=auto"
+alias ls="ls -FG --color=auto"
 alias dir="ll"
 
 alias gemlist='gem list | egrep -v "^( |$)"'
@@ -55,5 +55,10 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 # My classic one.
 PS1="(\d \t) (\u@\h:\w)\nbash> "
 export PS1
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
 
 # EOF
