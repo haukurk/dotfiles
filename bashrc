@@ -25,7 +25,7 @@ alias gp?='git log --pretty=oneline origin/master..HEAD'
 alias gs='git status'
 alias gpcd='git push origin master && cap deploy'
 alias gpom='git pull origin master'
-alias git='hub'
+alias gith='hub' # Not making hub default. But I recommend it.
 
 #
 # Functions
