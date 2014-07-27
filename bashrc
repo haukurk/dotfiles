@@ -27,6 +27,10 @@ alias gpcd='git push origin master && cap deploy'
 alias gpom='git pull origin master'
 alias gith='hub' # Not making hub default. But I recommend it.
 
+# Go Workspace configuration
+export GOPATH=$HOME/workspace-go/
+export PATH=$PATH:$GOPATH/bin
+
 #
 # Functions
 apply_current_ssh_key()
