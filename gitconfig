@@ -25,5 +25,3 @@
 	recent		= for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short) %(committerdate:relative)'
 [github]
     user = haukurk
-[push]
-    default = simple
