@@ -18,6 +18,8 @@
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+set enc=utf-8
+set fileencoding=utf-8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "

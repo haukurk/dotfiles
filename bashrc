@@ -109,4 +109,7 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
+# If not running interactively, don't do anything
+if [[ $- != *i* ]]; then return; else occasions; fi     
+
 # EOF
