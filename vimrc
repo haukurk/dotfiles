@@ -106,15 +106,34 @@ call vundle#begin()
 
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " Nerdtree!
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " Fugitive!
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
+" Awesome status bar airline.
 Plugin 'bling/vim-airline'
+
+" Go Dev plugin
+Plugin 'fatih/vim-go'
+
+" Puppet plugin
+Plugin 'rodjek/vim-puppet'
+
+" JSON
+Plugin 'elzr/vim-json'
+
+" Nagios
+Plugin 'tejr/vim-nagios'
+
+" Python
+Plugin 'hdima/python-syntax'
+
+" JS
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
