@@ -28,8 +28,9 @@ alias gpom='git pull origin master'
 alias gith='hub' # Not making hub default. But I recommend it.
 
 # Go Workspace configuration
-export GOPATH=$HOME/workspace-go/
-export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/workspace-go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #
 # Functions
