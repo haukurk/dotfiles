@@ -18,3 +18,6 @@ for file in $dotfiles; do
     echo "Creating symlink to $file in home directory."
     ln -s $dotfiles_dir/$file ~/.$file
 done
+
+# Install VIM Plugins with Vundle
+vim +PluginInstall +qall
