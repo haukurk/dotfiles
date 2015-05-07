@@ -3,36 +3,11 @@
 # Linux Bash Profile.
 #
 
-#
-#  OS Related Aliases #
-alias ll="ls -lhFG --color=auto"
-alias ls="ls -FG --color=auto"
-alias dir="ll"
-
-alias gemlist='gem list | egrep -v "^( |$)"'
-
-alias mbp='mate ~/.bash_profile'
-alias sbp='source ~/.bash_profile'
-
-alias gb='git branch'
-alias gba='git branch -a'
-alias gcav='git commit -av'
-alias gca='git commit -a'
-alias gd='git diff'
-alias gl='git pull origin master'
-alias gp='git push origin master'
-alias gp?='git log --pretty=oneline origin/master..HEAD'
-alias gs='git status'
-alias gpcd='git push origin master && cap deploy'
-alias gpom='git pull origin master'
-alias gith='hub' # Not making hub default. But I recommend it.
-
 # Go Workspace configuration
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/workspace-go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-#
 # Functions
 apply_current_ssh_key()
 {
@@ -64,6 +39,9 @@ export HISTSIZE=100000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:gp:gs:ll"
 export HISTCONTROL=ignoredups
+
+# Aliases
+. ~/.aliases
 
 # Tab completion for ssh hosts, from known_hosts. I love this.
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh

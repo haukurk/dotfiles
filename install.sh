@@ -3,7 +3,7 @@
 
 dotfiles_dir=~/dotfiles
 bakdir=~/dotfiles_bak
-dotfiles="bashrc vimrc vim gitconfig"
+dotfiles="bashrc vimrc vim gitconfig aliases"
 
 # Basic dotfiles install.
 echo -n "Creating $bakdir for backup of any existing dotfiles in ~ ..."
