@@ -28,6 +28,38 @@ apply_ssh_key_haukur_default()
   unset apply_ssh_key_haukur_default
 }
 
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  c_reset=`tput sgr0`
+  c_user=`tput setaf 2; tput bold`
+  c_path=`tput setaf 4; tput bold`
+  c_git_clean=`tput setaf 2`
+  c_git_dirty=`tput setaf 1`
+else
+  c_reset=
+  c_user=
+  c_path=
+  c_git_cleanclean=
+  c_git_dirty=
+fi
+
+# Function to assemble the Git parsingart of our prompt.
+git_prompt ()
+{
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    return 0
+  fi
+
+  git_branch=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
+
+  if git diff --quiet 2>/dev/null >&2; then
+    git_color="$c_git_clean"
+  else
+    git_color="$c_git_dirty"
+  fi
+
+  echo "[$git_color$git_branch${c_reset}]"
+}
+
 #
 # Shell options
 shopt -s histappend
@@ -79,7 +111,7 @@ function prompt {
   local WHITE="\[\033[0;37m\]"
   local WHITEBOLD="\[\033[1;37m\]"
   #export PS1="\n$BLACKBOLD[\t]$GREENBOLD \u@\h\[\033[00m\]:$BLUEBOLD\w\[\033[00m\] \\$ "
-  export PS1="$WHITE[\$(date +"%T")] $WHITEBOLD(\u@\h:\w)> "
+  export PS1="$WHITE[\$(date +"%T")] $WHITEBOLD(\u@\h:\w) \$(git_prompt)> "
 }
 prompt
 
