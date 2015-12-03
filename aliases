@@ -37,3 +37,4 @@ alias localip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo
 alias tmux="tmux -2"
 alias view="vim -p -R"
 alias vp="vim -p"
+alias portscan="nc -vnz -w 1 $1 $2"

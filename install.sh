@@ -5,6 +5,8 @@ dotfiles_dir=~/dotfiles
 bakdir=~/dotfiles_bak
 dotfiles="bashrc vimrc vim gitconfig aliases"
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # Basic dotfiles install.
 echo -n "Creating $bakdir for backup of any existing dotfiles in ~ ..."
 mkdir -p $bakdir
