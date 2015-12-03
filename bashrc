@@ -76,7 +76,9 @@ export HISTCONTROL=ignoredups
 . ~/.aliases
 
 # Tab completion for ssh hosts, from known_hosts. I love this.
-complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+if [ -f ~/.ssh/known_hosts ]; then
+  complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+fi
 
 # this prompt will show the hostname in green if the last command returned 0,
 # otherwise it will be red.
@@ -120,7 +122,8 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
-# If not running interactively, don't do anything
-if [[ $- != *i* ]]; then return; else occasions; fi     
-
+if which occasions >/dev/null; then
+  # If not running interactively, don't do anything
+  if [[ $- != *i* ]]; then return; else occasions; fi     
+fi
 # EOF
